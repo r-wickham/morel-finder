@@ -1,0 +1,107 @@
+Format version: NOHRSC GIS/RS raster file v1.1
+Data source: NCEP (HRRR 255, RR 130)
+Created by module: sm_products
+Created by module comment: Not applicable
+Created year: 2021
+Created month: 5 
+Created day: 25
+Created hour: 4 
+Created minute: 25
+Created second: 13
+Last modified by module: sm_products
+Last modified by module comment: Not applicable
+Last modified year: 2021
+Last modified month: 5 
+Last modified day: 25
+Last modified hour: 4 
+Last modified minute: 25
+Last modified second: 13
+Satellite data: no
+Satellite name: Not applicable
+Satellite channel: 0
+Satellite data calibrated: no
+Description: Scaled Non-snow accumulation, 24-hour total
+Thematic: no
+Theme file: Not applicable
+Data units: Kilograms per square meter / 10.000000
+Product code: 83129815  
+Attribute table: Not applicable
+Data file pathname: us_ssmv01025SlL00T0024TTNATS2021052505DP001.dat
+Data type: integer
+Data bytes per pixel: 2
+Data intercept: 0.00000000000000
+Data slope: 1.00000000000000
+Minimum data value: 0.00000000000000
+Maximum data value: 1745.00000000000
+No data value: -9999.00000000000
+Number of columns: 6935      
+Number of rows: 3351      
+Geographically corrected: yes
+Projected: no
+Projection file: Not applicable
+Horizontal datum: WGS84
+Horizontal precision: 0.00000000000000
+Elevation above datum: no
+Vertical datum: Not applicable
+Vertical precision: 0.00000000000000
+Benchmark column: 0         
+Benchmark row: 0         
+Benchmark x-axis coordinate: -124.729166666667
+Benchmark y-axis coordinate: 52.8708333333333
+X-axis resolution: 0.00833333333333333
+Y-axis resolution: 0.00833333333333333
+X-axis offset: 0.00416666666666052
+Y-axis offset: 0.00416666666667146
+Minimum x-axis coordinate: -124.733333333333
+Maximum x-axis coordinate: -66.9416666666667
+Minimum y-axis coordinate: 24.9500000000000
+Maximum y-axis coordinate: 52.8750000000000
+Start year: 2021
+Start month: 5 
+Start day: 24
+Start hour: 6 
+Start minute: 0 
+Start second: 0 
+Stop year: 2021
+Stop month: 5 
+Stop day: 25
+Stop hour: 6 
+Stop minute: 0 
+Stop second: 0 
+Compressed: no
+Compression file: Not applicable
+Number of color tables: 0 
+Color table 01 descriptor: Not applicable
+Color table 02 descriptor: Not applicable
+Color table 03 descriptor: Not applicable
+Color table 04 descriptor: Not applicable
+Color table 05 descriptor: Not applicable
+Color table 06 descriptor: Not applicable
+Color table 07 descriptor: Not applicable
+Color table 08 descriptor: Not applicable
+Color table 09 descriptor: Not applicable
+Color table 10 descriptor: Not applicable
+Color table 11 descriptor: Not applicable
+Color table 12 descriptor: Not applicable
+Color table 13 descriptor: Not applicable
+Color table 14 descriptor: Not applicable
+Color table 15 descriptor: Not applicable
+Color table 16 descriptor: Not applicable
+Color table 01 file: Not applicable
+Color table 02 file: Not applicable
+Color table 03 file: Not applicable
+Color table 04 file: Not applicable
+Color table 05 file: Not applicable
+Color table 06 file: Not applicable
+Color table 07 file: Not applicable
+Color table 08 file: Not applicable
+Color table 09 file: Not applicable
+Color table 10 file: Not applicable
+Color table 11 file: Not applicable
+Color table 12 file: Not applicable
+Color table 13 file: Not applicable
+Color table 14 file: Not applicable
+Color table 15 file: Not applicable
+Color table 16 file: Not applicable
+Histogram: no
+Histogram file: Not applicable
