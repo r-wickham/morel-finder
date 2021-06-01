@@ -2,6 +2,7 @@
 #' Downloading NetCDF data from RFC
 #'
 #' Usage:
+# source("scripts/r_setup.R")
 # rfcGrids <-
 #   downloadGrids(outDir=dirConfig$data$temp) %>%
 #   processNetCdfDir() %>%
@@ -51,6 +52,7 @@ getNetCDFUrls <- function(pullDate, dataTypes = c("QPE","QPF","QTE","QTF")){
 #'                  E = Estimate
 #'                  F = Forecast
 #' @param outDir    directory to save downloaded grids
+#' @return path to output directory
 #' 
 downloadGrids <- function(pullDates = (Sys.Date()-14):Sys.Date(),
                           dataTypes = c("QPE","QPF","QTE","QTF"),
@@ -58,15 +60,14 @@ downloadGrids <- function(pullDates = (Sys.Date()-14):Sys.Date(),
   library(purrr)
   library(parallel)
   pullDates <- as.Date(pullDates, origin="1970-01-01")
-  # Form urls
-  urls <- map2(.x = pullDates, .y = list(dataTypes), .f = getNetCDFUrls) %>%
+  urls <- 
+    map2(.x = pullDates, .y = list(dataTypes), .f = getNetCDFUrls) %>%
     unlist()
-  # Locations to download
+  # Locations to save downloaded files from URLs
   destFiles <- sprintf("%s/%s", outDir, basename(urls))
-  # Attempt to download each
+  # Attempt to download each in parallel
   cl <- makeCluster(detectCores()-1)
   tryCatch({
-    
     mcmapply(FUN = tryDownload, url=urls, destFile=destFiles)
   }, finally = stopCluster(cl))
   outDir
@@ -96,8 +97,8 @@ processNetCdfDir <- function(netCdfDir, outDir){
 }
 
 #'
-#' Attempts to use 'gunzip' function on file, returning
-#'   either NULL if bad attempt, or the unzipped file name
+#' Attempts to use 'gunzip' function on file, returning either blank
+#'   character if bad attempt, or the unzipped file name
 #'
 tryGunzip <- function(zipFileName){
   out <- try(gunzip(zipFileName, remove=T))
@@ -108,13 +109,14 @@ tryGunzip <- function(zipFileName){
 
 
 #'
-#' Loads a NetCDF file as a raster object
+#' Loads a NetCDF file as a raster object given the full 
+#'   path to the file name
 #'
 loadNWRFCNetCdf <- function(netCdfFile){
   library(raster)
   library(ncdf4)
   r <- try({
-    raster::raster(netCdfFile)
+    r <- raster::raster(netCdfFile)
   crs(r) <- snodasCRS
   r})
   if(is(r, "try-error")) return(NULL)

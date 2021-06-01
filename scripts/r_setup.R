@@ -4,6 +4,7 @@
 #'
 
 suppressPackageStartupMessages({
+  library(purrr)
   library(raster)
   library(snowdl)
   library(yaml)
